@@ -1,0 +1,175 @@
+body {
+    background-color: rgb(59, 101, 135);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameContainer {
+    position: relative;
+    width: 400px; /* Full viewport width */
+    height: 1500px; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the car stays within bounds */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: solid 3px rgb(216, 216, 216);
+}
+
+#backGround {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3500px; /* Match the width of the game container */
+    height: 1000px; /* Match the height of the game container */
+    z-index: 1; /* Background image is below */
+    box-sizing: border-box;
+    top: -130px; /* Shift background upwards to reveal more of the bottom */
+
+ 
+    transition: ease .5s;
+}
+
+#backGroundFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3500px; /* Match the width of the game container */
+    height: 1000px; /* Match the height of the game container */
+    z-index: 4; /* Background image is below */
+    box-sizing: border-box;
+    top: -130px; /* Shift background upwards to reveal more of the bottom */
+
+ 
+    transition: ease .5s;
+}
+
+
+#player {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+}
+
+
+#playerWalk1 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+
+#playerWalk2 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeft {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeftWalk1 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeftWalk2 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 360px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#fire {
+    position: absolute;
+    width: 800px; /* Adjust car size as needed */
+    z-index: 1; /* Car image is on top */
+    top: -100px; /* Set starting vertical position */
+    left: 120px; /* Set starting horizontal position */
+    display: none;
+}
+
+#controllerContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    height: 60px;
+    width: 80px;
+    margin: 7px;
+    font-size: 1.4rem;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: solid 2px rgb(152, 152, 152);
+}
+
+button:hover {
+    background-color: rgb(119, 119, 119);
+}
+
+#textContainer {
+    width: 250px;
+    height: 250px;
+    border: solid rgb(255, 255, 255) 2px;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    visibility: hidden;
+}
+
+#enterBtn {
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: rgb(115, 165, 28);
+    color: white;
+    font-size: 1rem;
+    height: 70px;
+    width: 70px;
+}
+
+#enterBtn:hover {
+    background-color: rgb(133, 190, 33);
+}
+
+#burnBtn {
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: rgb(165, 28, 28);
+    color: white;
+    font-size: 1rem;
+    height: 70px;
+    width: 70px;
+
+}
+
+#burnBtn:hover {
+    background-color: rgb(195, 33, 33);
+
+}
+
