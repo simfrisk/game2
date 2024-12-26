@@ -7,6 +7,7 @@ const playerLeftWalk2 = document.getElementById("playerLeftWalk2");
 const textBox = document.getElementById("textContainer");
 
 const burnBtn = document.getElementById("burnBtn");
+const enterBtn = document.getElementById("enterBtn");
 const fire = document.getElementById("fire");
 const textText = document.getElementById("textText");
 
@@ -96,5 +97,11 @@ leftBtn.onclick = function() {
 
 burnBtn.onclick = function () {
         fire.style.display = "block";
+        burnBtn.style.display = "none";
+        enterBtn.style.display = "none";
         textText.textContent = "Why did you do that!";   
 };
+
+enterBtn.onclick = function() {
+    window.location.href = "house.html"
+  };
