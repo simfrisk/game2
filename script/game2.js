@@ -29,7 +29,7 @@ let currentPlayerZ = 0;
 
 rightBtn.onclick = function() {
 
-    if (currentX <= -2400) {
+    if (currentX <= -2230) {
         currentPlayerX -= 40;
         textBox.style.visibility = "visible";
         playerContainer.style.transform = `translate(${currentPlayerX}px, ${currentPlayerY}px) rotate(${currentPlayerZ}deg)`;
