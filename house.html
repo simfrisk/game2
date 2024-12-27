@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/game2.css">
+    <link rel="stylesheet" href="style/game2House.css">
 </head>
 <body>
 
-    <p>You have entered the house!</p>
+    <div id="gameContainer">
+        <img id="backGround" src="img/house/insideHouseL2.png" alt="">
+        <img id="backGroundFront" src="img/house/insideHouseL3.png" alt="">
+        <div id="playerContainer">
+        <img id="player" src="img/character/Idle (1).png" alt="">
+        <img id="playerWalk1" src="img/character/Walk (2).png" alt="">
+        <img id="playerWalk2" src="img/character/Walk (13).png" alt="">
+        <img id="playerLeft" src="img/character/IdleLeft (1).png" alt="">
+        <img id="playerLeftWalk1" src="img/character/WalkLeft (2).png" alt="">
+        <img id="playerLeftWalk2" src="img/character/WalkLeft (13).png" alt="">
+        <img id="sleep1" src="img/character/Dead (15).png" alt="">
+        <img id="fire" src="img/fire2.png" alt="">
+        </div>
+    </div>
+
+    <div class="controllerBtn" id="controllerContainer">
+        <button id="upBtn">Up</button>
+        <br>
+        <button id="leftBtn">Left</button>
+        <button id="downBtn">Down</button>
+        <button id="rightBtn">Right</button>
+
+    </div>
+
+      <!-- Text area -->
+      <div id="textContainer">
+        <h2 id="textText">You find a house.</h2>
+        <button id="sleepBtn">Sleep</button>
+        <button id="burnBtn">Burn Bed</button>
+        </div>  
+
     
 </body>
+
+<script src="script/game2House.js"></script>
 </html>
