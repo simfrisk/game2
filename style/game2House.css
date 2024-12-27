@@ -1,0 +1,189 @@
+body {
+    margin-top: 50px;
+    background-color: rgb(59, 101, 135);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer {
+    position: relative;
+    width: 380px; /* Full viewport width */
+    height: 600px; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the car stays within bounds */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: solid 3px rgb(216, 216, 216);
+}
+
+#backGround {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1200px; /* Match the width of the game container */
+    height: 1200px; /* Match the height of the game container */
+    z-index: 1; /* Background image is below */
+    box-sizing: border-box;
+    top: -600px; /* Shift background upwards to reveal more of the bottom */
+    left: -400px; /* Shift background upwards to reveal more of the bottom */
+    transition: ease .5s;
+}
+
+#backGroundFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3200px; /* Match the width of the game container */
+    height: 900px; /* Match the height of the game container */
+    z-index: 4; /* Background image is below */
+    box-sizing: border-box;
+    top: -600px; /* Shift background upwards to reveal more of the bottom */
+
+ 
+    transition: ease .5s;
+}
+
+
+#player {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    
+}
+
+
+#playerWalk1 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+
+#playerWalk2 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeft {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeftWalk1 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#playerLeftWalk2 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#sleep1 {
+    position: absolute;
+    width: 180px; /* Adjust car size as needed */
+    z-index: 2; /* Car image is on top */
+    top: 280px; /* Set starting vertical position */
+    left: 160px; /* Set starting horizontal position */
+    display: none;
+}
+
+#fire {
+    position: absolute;
+    width: 800px; /* Adjust car size as needed */
+    z-index: 1; /* Car image is on top */
+    top: -156px; /* Set starting vertical position */
+    left: 50px; /* Set starting horizontal position */
+    display: none;
+}
+
+#controllerContainer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    height: 65px;
+    width: 85px;
+    margin: 5px;
+    font-size: 1.4rem;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: solid 2px rgb(152, 152, 152);
+}
+
+button:hover {
+    background-color: rgb(119, 119, 119);
+}
+
+#textContainer {
+    position: absolute;
+    width: 380px;
+    height: 150px;
+    font-size: .8rem;
+    border: solid rgb(255, 255, 255) 2px;
+    background-color: rgba(0, 0, 0, 0.569);
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    visibility: hidden;
+    top: 501px;
+    z-index: 4;
+}
+
+#sleepBtn {
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: rgb(115, 165, 28);
+    color: white;
+    font-size: 1rem;
+    height: 55px;
+    width: 80px;
+}
+
+#sleepBtn:hover {
+    background-color: rgb(133, 190, 33);
+}
+
+#burnBtn {
+    border: solid rgb(255, 255, 255) 1px;
+    background-color: rgb(165, 28, 28);
+    color: white;
+    font-size: 1rem;
+    height: 55px;
+    width: 80px;
+
+}
+
+#burnBtn:hover {
+    background-color: rgb(195, 33, 33);
+
+}
+
