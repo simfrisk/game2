@@ -1,48 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game2</title>
-    <link rel="stylesheet" href="style/game2.css">
-</head>
-<body>
+const player = document.getElementById("player");
+const playerLeft = document.getElementById("playerLeft");
+const playerWalk1 = document.getElementById("playerWalk1");
+const playerWalk2 = document.getElementById("playerWalk2");
+const playerLeftWalk1 = document.getElementById("playerLeftWalk1");
+const playerLeftWalk2 = document.getElementById("playerLeftWalk2");
+const textBox = document.getElementById("textContainer");
 
-    <div id="gameContainer">
-        <img id="backGround" src="img/bg3.jpg" alt="">
-        <img id="backGroundFront" src="img/bg3Front.png" alt="">
-        <div id="playerContainer">
-        <img id="player" src="img/character/Idle (1).png" alt="">
-        <img id="playerWalk1" src="img/character/Walk (2).png" alt="">
-        <img id="playerWalk2" src="img/character/Walk (13).png" alt="">
-        <img id="playerLeft" src="img/character/IdleLeft (1).png" alt="">
-        <img id="playerLeftWalk1" src="img/character/WalkLeft (2).png" alt="">
-        <img id="playerLeftWalk2" src="img/character/WalkLeft (13).png" alt="">
-        <img id="fire" src="img/fire2.png" alt="">
-        </div>
-    </div>
+const burnBtn = document.getElementById("burnBtn");
+const enterBtn = document.getElementById("enterBtn");
+const fire = document.getElementById("fire");
+const textText = document.getElementById("textText");
 
-  
-    <div class="controllerBtn" id="controllerContainer">
-        <button id="upBtn">Up</button>
-        <br>
-        <button id="leftBtn">Left</button>
-        <button id="downBtn">Down</button>
-        <button id="rightBtn">Right</button>
+const playerContainer = document.getElementById("player");
+const backGround = document.getElementById("backGround");
+const backGroundFront = document.getElementById("backGroundFront");
 
-    </div>
+const upBtn = document.getElementById("upBtn");
+const leftBtn = document.getElementById("leftBtn");
+const downBtn = document.getElementById("downBtn");
+const rightBtn = document.getElementById("rightBtn");
 
-      <!-- Text area -->
-      <div id="textContainer">
-        <h2 id="textText">You find a house.</h2>
-        <button id="enterBtn">Enter house</button>
-        <button id="burnBtn">Burn house</button>
-        </div>  
-    
+document.addEventListener("keydown", function(event) {
+    switch (event.key) {
+        case "ArrowUp":
+            upBtn.onclick();
+            break;
+        case "ArrowDown":
+            downBtn.onclick();
+            break;
+        case "ArrowLeft":
+            leftBtn.onclick();
+            break;
+        case "ArrowRight":
+            rightBtn.onclick();
+            break;
+    }
+});
 
-    
-    
-</body>
+let currentX = 0;
+let currentY = 0;
+let currentZ = 0;
 
-<script src="script/game2.js"></script>
-</html>
+let currentPlayerX = 0;
+let currentPlayerY = 0;
+let currentPlayerZ = 0;
+
+rightBtn.onclick = function() {
+
+    if (currentX <= -2230) {
+        currentPlayerX -= 40;
+        textBox.style.visibility = "visible";
+        playerContainer.style.transform = `translate(${currentPlayerX}px, ${currentPlayerY}px) rotate(${currentPlayerZ}deg)`;
+
+        return
+    };
+   
+    if (playerWalk1.style.display === "none") {
+        currentX -= 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "block";
+        playerWalk2.style.display = "none";
+    } else {
+        player.style.display = "none";
+        currentX -= 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "none";
+        playerWalk2.style.display = "block";
+    }
+    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+};
+
+
+// Left movement
+leftBtn.onclick = function() {
+
+    if (currentX >= 0) {
+        playerContainer.style.transform = `translate(${currentPlayerX}px, ${currentPlayerY}px) rotate(${currentPlayerZ}deg)`;
+        return;
+    }
+
+    if (playerLeftWalk1.style.display === "none") {
+        currentX += 40;
+        player.style.display = "none";
+        playerWalk1.style.display = "none";
+        playerWalk2.style.display = "none";
+        playerLeftWalk1.style.display = "block";
+        playerLeftWalk2.style.display = "none";
+    } else {
+        currentX += 40;
+        player.style.display = "none";
+        playerWalk1.style.display = "none";
+        playerWalk2.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "block";
+    }
+    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+};
+
+
+
+// Up movement
+upBtn.onclick = function() {
+    if (currentY >= 50) {
+        currentPlayerY -= 40;
+        playerContainer.style.transform = `translate(${currentPlayerX}px, ${currentPlayerY}px) rotate(${currentPlayerZ}deg)`;
+
+        return
+    };
+   
+    if (playerWalk1.style.display === "none") {
+        currentY += 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "block";
+        playerWalk2.style.display = "none";
+    } else {
+        player.style.display = "none";
+        currentY += 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "none";
+        playerWalk2.style.display = "block";
+    }
+    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+
+};
+
+// down movement
+downBtn.onclick = function() {
+    if (currentY <= -8) {
+        return
+    };
+   
+    if (playerWalk1.style.display === "none") {
+        currentY -= 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "block";
+        playerWalk2.style.display = "none";
+    } else {
+        player.style.display = "none";
+        currentY -= 40;
+        playerLeft.style.display = "none";
+        playerLeftWalk1.style.display = "none";
+        playerLeftWalk2.style.display = "none";
+        playerWalk1.style.display = "none";
+        playerWalk2.style.display = "block";
+    }
+    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
+
+};
+
+
+
+
+// Buttons
+
+burnBtn.onclick = function () {
+        fire.style.display = "block";
+        burnBtn.style.display = "none";
+        enterBtn.style.display = "none";
+        textText.textContent = "Why did you do that!";   
+};
+
+enterBtn.onclick = function() {
+    window.location.href = "house.html"
+  };
