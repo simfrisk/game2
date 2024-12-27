@@ -1,16 +1,16 @@
 body {
+    margin-top: 50px;
     background-color: rgb(59, 101, 135);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 #gameContainer {
     position: relative;
-    width: 400px; /* Full viewport width */
+    width: 380px; /* Full viewport width */
     height: 600px; /* Full viewport height */
     display: flex;
     justify-content: center;
@@ -137,7 +137,7 @@ button:hover {
 
 #textContainer {
     position: absolute;
-    width: 450px;
+    width: 380px;
     height: 150px;
     font-size: .8rem;
     border: solid rgb(255, 255, 255) 2px;
@@ -146,7 +146,7 @@ button:hover {
     text-align: center;
     margin-bottom: 30px;
     visibility: hidden;
-    top: 472px;
+    top: 501px;
     z-index: 4;
 }
 
