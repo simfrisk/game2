@@ -1,107 +1,48 @@
-const player = document.getElementById("player");
-const playerLeft = document.getElementById("playerLeft");
-const playerWalk1 = document.getElementById("playerWalk1");
-const playerWalk2 = document.getElementById("playerWalk2");
-const playerLeftWalk1 = document.getElementById("playerLeftWalk1");
-const playerLeftWalk2 = document.getElementById("playerLeftWalk2");
-const textBox = document.getElementById("textContainer");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game2</title>
+    <link rel="stylesheet" href="style/game2.css">
+</head>
+<body>
 
-const burnBtn = document.getElementById("burnBtn");
-const enterBtn = document.getElementById("enterBtn");
-const fire = document.getElementById("fire");
-const textText = document.getElementById("textText");
+    <div id="gameContainer">
+        <img id="backGround" src="img/bg3.jpg" alt="">
+        <img id="backGroundFront" src="img/bg3Front.png" alt="">
+        <div id="playerContainer">
+        <img id="player" src="img/character/Idle (1).png" alt="">
+        <img id="playerWalk1" src="img/character/Walk (2).png" alt="">
+        <img id="playerWalk2" src="img/character/Walk (13).png" alt="">
+        <img id="playerLeft" src="img/character/IdleLeft (1).png" alt="">
+        <img id="playerLeftWalk1" src="img/character/WalkLeft (2).png" alt="">
+        <img id="playerLeftWalk2" src="img/character/WalkLeft (13).png" alt="">
+        <img id="fire" src="img/fire2.png" alt="">
+        </div>
+    </div>
 
-const playerContainer = document.getElementById("player");
-const backGround = document.getElementById("backGround");
-const backGroundFront = document.getElementById("backGroundFront");
+  
+    <div class="controllerBtn" id="controllerContainer">
+        <button id="upBtn">Up</button>
+        <br>
+        <button id="leftBtn">Left</button>
+        <button id="downBtn">Down</button>
+        <button id="rightBtn">Right</button>
 
-const upBtn = document.getElementById("upBtn");
-const leftBtn = document.getElementById("leftBtn");
-const downBtn = document.getElementById("downBtn");
-const rightBtn = document.getElementById("rightBtn");
+    </div>
 
-let currentX = 0;
-let currentY = 0;
-let currentZ = 0;
+      <!-- Text area -->
+      <div id="textContainer">
+        <h2 id="textText">You find a house.</h2>
+        <button id="enterBtn">Enter house</button>
+        <button id="burnBtn">Burn house</button>
+        </div>  
+    
 
-let currentPlayerX = 0;
-let currentPlayerY = 0;
-let currentPlayerZ = 0;
+    
+    
+</body>
 
-rightBtn.onclick = function() {
-
-    if (currentX <= -2230) {
-        currentPlayerX -= 40;
-        textBox.style.visibility = "visible";
-        playerContainer.style.transform = `translate(${currentPlayerX}px, ${currentPlayerY}px) rotate(${currentPlayerZ}deg)`;
-
-        return
-    };
-   
-    if (playerWalk1.style.display === "none") {
-        currentX -= 40;
-        playerLeft.style.display = "none";
-        playerLeftWalk1.style.display = "none";
-        playerLeftWalk2.style.display = "none";
-        playerWalk1.style.display = "block";
-        playerWalk2.style.display = "none";
-    } else {
-        player.style.display = "none";
-        currentX -= 40;
-        playerLeft.style.display = "none";
-        playerLeftWalk1.style.display = "none";
-        playerLeftWalk2.style.display = "none";
-        playerWalk1.style.display = "none";
-        playerWalk2.style.display = "block";
-    }
-    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-};
-
-leftBtn.onclick = function() {
-    currentX += 40;
-    if (playerLeftWalk1.style.display === "none") {
-        player.style.display = "none";
-        playerWalk1.style.display = "none";
-        playerWalk2.style.display = "none";
-        playerLeftWalk1.style.display = "block";
-        playerLeftWalk2.style.display = "none";
-    } else {
-        player.style.display = "none";
-        playerWalk1.style.display = "none";
-        playerWalk2.style.display = "none";
-        playerLeftWalk1.style.display = "none";
-        playerLeftWalk2.style.display = "block";
-    }
-    backGround.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-    backGroundFront.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-};
-
-
-
-
-// upBtn.onclick = function() {
-//     currentY -= 40;
-//     playerContainer.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-// };
-
-// downBtn.onclick = function() {
-//     currentY += 40;
-//     playerContainer.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${currentZ}deg)`;
-// };
-
-
-
-
-// Buttons
-
-burnBtn.onclick = function () {
-        fire.style.display = "block";
-        burnBtn.style.display = "none";
-        enterBtn.style.display = "none";
-        textText.textContent = "Why did you do that!";   
-};
-
-enterBtn.onclick = function() {
-    window.location.href = "house.html"
-  };
+<script src="script/game2.js"></script>
+</html>
